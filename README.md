@@ -1,4 +1,89 @@
 # 김영민 [201840113]
+## [05월 04일]
+## 객체 자료형
+기본 자료형 : 자바스크립트에서 기본 제공하는 여섯자료중 3개(숫자,문자열,불)
+### Number 객체
+생성방법
+<pre>
+<code>
+let number = 273;
+let number = new Number(273);
+</code>
+</pre>
+number 생성자 함수의 속성
+>MAX_VALUE = 숫자가 나타낼수있는 최대숫자<br>
+MIN_VALUE = 숫자가 나타낼수있는 최소숫자<br>
+NaN = 숫자로 나타낼수 없는숫자<br>
+POSITIVE_INFINITY = 양의 무한대 숫자<br>
+NEGATIVE_INFINITY = 음의 무한대 숫자
+<hr>
+
+### String 객체
+생성방법
+<pre>
+<code>
+let string = '안녕하세요';
+let string = new String('안녕하세요');
+</code>
+</pre>
+String 생성자의 속성
+>length = 준자열의 길이를 나타냄
+<hr>
+
+
+## 생성자함수
+생성자함수 : 객체를 만드는 함수, 대문자로 시작되는 이름을 가진다<br>
+프로토타입 : 생성자 함수로 만든 객체는 프로토타입이라는 공간에 지정하여
+모든객체가 공유하도록 사용가능하다
+<pre>
+<code>
+function Pruduct(name, price){
+    this.name = name;
+    this.price = price;
+}
+</code>
+</pre>
+<hr>
+
+## 속성과 메서드
+배열의 요소처럼 객체의 속성에도 다양한 자료형이 입력가능하다<br>
+**메소드 : 객체의 속성중 자료형이 함수인경우**
+<pre>
+<code>
+var object: {
+    number: '546',
+    string: 'KimSeungGeun',
+    bloolean: true,
+    array: [1,2,3,4,5],
+    method: function() {
+        console.log("케인인님 한판해요")
+    }
+} 
+</code>
+</pre>
+
+<hr>
+
+## 객체
+여러개의 자료형을 한번에 저장하는 자료형<br>
+객체의 선언 방법
+<pre>
+<code>
+let product ={
+    제품명: '애플망고',
+    유형: '당절임',
+    성분: '망고, 설탕, 나트륨, 색소',
+    원산지: '필리핀'
+}      
+                  // 제품명,유형,성분,원산지를 가진 객체 product 생성
+
+console.log(product);    // product 객체출력
+</code>
+</pre>
+객체명['속성이름']  = 속성에만 따로 접근가능<br>
+객체명.속성이름  = 속성에만 따로 접근가능
+<hr>
+
 ## [04월 27일]
 ## 배열
 let array = ['사과','사과' , '사과', '사과'];
