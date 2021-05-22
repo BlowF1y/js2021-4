@@ -1,4 +1,69 @@
 # 김영민 [201840113]
+## 05월 22일
+
+## process 객체의 속성과 이벤트
+Node.js 는 process 전역 객체를 제공
+process 객체는 프로세스 정보를 제공하며 제어할수있게하는 객체
+
+progress객체의 속성
+<pre>
+<code>
+env = 컴퓨터 환경정보
+version = 버전을 나타냄
+versions = 종속된 프로그램 버전
+arch = 프로세서의 아키텍처를 나타냄
+platform=  플랫폼을 나타냄
+</code>
+</pre>
+process 객체의 메소드
+<pre>
+<code>
+exit 프로그램종료
+memoryUsage() 메모리 사용정보 객체를 리턴
+uptime() 현재 프로그램이 실행된 시간을 리턴
+</code>
+</pre>
+<hr>
+
+## 전역변수
+__filename = 현재실행중인 코드의 파일 경로
+__dirname = 현재 실행중인 코드의 풀더 경로
+<pre>
+<code>
+console.log(__filename);
+console.log(__dirname);
+</code>
+</pre>
+<hr>
+
+## url 모듈
+const url =require'(url')
+메소드
+<pre>
+<code>
+resolve(from to) 매개변수를 조합하여 완전한 url문자열을 생성해 리턴
+parse(urlStar) : URL 문자열을 URL 객체로 변환해 리턴
+format(urlObj) : URL 객체를 URL 문자열로 리턴.
+resolve(from,to) : 매개 변수를 조합하여 완전한 URL 문자열을 생성해 리턴
+</code>
+</pre>
+<hr>
+
+## File System 모듈
+const fs = requrie('fs')
+파일 읽기 : 실행할 자바스크립트 파일이 있는 풀더에 textfile.txt이름의 파일을 생성
+fs.readFileSync(<파일이름>) = 동기적으로 파읽을 읽는다
+fs.readFile(<파일이름>,<콜백함수>) 비동기적으로 파일을 읽는다
+<hr>
+
+## 노드 패키지 매니저
+Node.js는 npm 패키지 매니저를 사용해서 외부모듈을 설치가능함
+예) npm istall <모듈이름>
+npm istall express @사용으로 원하는 버전을설치 할수있다
+express@4
+<hr>
+
+
 ## [05월 11일]
 ### 예외처리
 프로그램 실행시 문제가 발생하면 프로그램이 자동으로 종료되는데 이렇게 발생한 오류를 예외라고 한다
