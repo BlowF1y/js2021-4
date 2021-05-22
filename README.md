@@ -2,9 +2,9 @@
 ## 05월 22일
 
 ## process 객체의 속성과 이벤트
-Node.js 는 process 전역 객체를 제공
+Node.js 는 process 전역 객체를 제공<br>
 process 객체는 프로세스 정보를 제공하며 제어할수있게하는 객체
-
+<br>
 progress객체의 속성
 <pre>
 <code>
@@ -26,7 +26,7 @@ uptime() 현재 프로그램이 실행된 시간을 리턴
 <hr>
 
 ## 전역변수
-__filename = 현재실행중인 코드의 파일 경로
+__filename = 현재실행중인 코드의 파일 경로<br>
 __dirname = 현재 실행중인 코드의 풀더 경로
 <pre>
 <code>
@@ -37,7 +37,7 @@ console.log(__dirname);
 <hr>
 
 ## url 모듈
-const url =require'(url')
+const url =require'(url')<br>
 메소드
 <pre>
 <code>
@@ -50,16 +50,16 @@ resolve(from,to) : 매개 변수를 조합하여 완전한 URL 문자열을 생�
 <hr>
 
 ## File System 모듈
-const fs = requrie('fs')
-파일 읽기 : 실행할 자바스크립트 파일이 있는 풀더에 textfile.txt이름의 파일을 생성
-fs.readFileSync(<파일이름>) = 동기적으로 파읽을 읽는다
-fs.readFile(<파일이름>,<콜백함수>) 비동기적으로 파일을 읽는다
+const fs = requrie('fs')<br>
+파일 읽기 : 실행할 자바스크립트 파일이 있는 풀더에 textfile.txt이름의 파일을 생성<br>
+fs.readFileSync(<파일이름>) = 동기적으로 파읽을 읽는다<br>
+fs.readFile(<파일이름>,<콜백함수>) 비동기적으로 파일을 읽는다<br>
 <hr>
 
 ## 노드 패키지 매니저
-Node.js는 npm 패키지 매니저를 사용해서 외부모듈을 설치가능함
-예) npm istall <모듈이름>
-npm istall express @사용으로 원하는 버전을설치 할수있다
+Node.js는 npm 패키지 매니저를 사용해서 외부모듈을 설치가능함<br>
+예) npm istall <모듈이름><br>
+npm istall express @사용으로 원하는 버전을설치 할수있다<br>
 express@4
 <hr>
 
