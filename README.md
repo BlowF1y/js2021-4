@@ -1,10 +1,100 @@
 # 김영민 [201840113]
-## 05월 22일
 
+### [05월 25일]
+## express 모듈
+express 모듈은 웹 서버를 개발하는 모듈이다.<br>
+
+$ npm install express : 입력하면 express 모듈을 설치할 수 있다.
+
+Express 모듈의 메소드
+<pre>
+<code>
+express() : 서버 애플리케이션 객체를 생성합니다.
+app.use() : 요청이 왔을 때, 실행할 함수를 지정합니다.
+app.listen() : 서버를 실행합니다.
+// 모듈을 추출합니다.
+const express = require('express');
+
+// 서버를 생성합니다.
+const app = express();
+
+// request 이벤트 리스너를 설정합니다.
+app.use((request.response) => {
+    response.send('<h1>Hello express</h1>');
+});
+
+// 서버를 실행합니다.
+app.listen(52273, () => {
+    console.log('Server running at http://127.0.0.1:52273');
+});
+</code>
+</pre>
+<hr>
+
+## 페이지 라우팅
+페이지 라우팅이란 클라이언트 한테 적절한 페이지를 제공하는 기술이다.<br>
+
+Express 모듈의 페이지 라우팅 메소드
+<pre>
+<code>
+get(path,callback) : GET 요청이 왔을 때 발생했을 때 이벤트 리스너를 지정합니다.
+post(path,callback) : POST 요청이 왔을 때 발생했을 때 이벤트 리스너를 지정합니다.
+put(path,callback) : PUT 요청이 왔을 때 발생했을 때 이벤트 리스너를 지정합니다.
+delete(path,callback) : DELETE 요청이 왔을 때 발생했을 때 이벤트 리스너를 지정합니다.
+all(path,callback) : 모든 요청이 왔을 때 발생했을 때 이벤트 리스너를 지정합니다.
+</code>
+</pre>
+<hr>
+
+
+## response 객체
+response 객체의 메소드
+
+<pre>
+<code>
+send() : 데이터 본문을 제공합니다.
+status() : 상태 코드를 제공합니다.
+set() : 헤더를 설정합니다.
+send() 메소드는 사용자에게 데이터 본문을 제공합니다. 또한 가장 마지막에 실행해야 하며, 두번 실행할 수는 없습니다.
+</code>
+</pre>
+<hr>
+
+## Content-type
+Content-type은 클라이언트로 제공되는 데이터의 형태입니다. text, html, png, mpe, json 등 여러가지가 존재합니다.<br>
+type() 메소드로 Content-type을 MIME 형식으로 지정할 수 있습니다.
+<pre>
+<code>
+app.get('/image',(request, response) => {
+    fs.readFile('image.png',(error,data) => {
+        response.type('image/png');
+        response.send(data);
+    });
+});
+</code>
+</pre>
+<hr>
+
+## request 객체
+request 객체는 요청에 해당하는 객체를 말합니다. 즉, 클라이언트가 입력한 값들도 요청에 해당합니다.
+<hr>
+
+## 미들 웨어
+익스프레스에서의 미들웨어는 클라이언트와 서버 사이에서 요청과 응답을 조율하고 관리하는 주체이다. 미들웨어는 요청과 응답을 조작하여 기능을 추가하기도 하고, 나쁜 요청을 걸러내기도 함.
+
+
+## morgan 미들웨어
+morgan은 express의 미들웨어로 사용할 수 있는 외부 모듈이다. 또한 morgan은 로그 출력 미들웨어로써, 웹 요청과 관련된 내용을 출력하는 미들웨어이다.
+
+6-2. body-parser 미들웨어
+body-parser 미들웨어는 요청 본문을 분석하는 미들웨어이다. body-parser은 URL 쿼리에 정보를 담아 전송하는 과정에서 클라이언트가 어떤 형태의 Encoding-type으로 요청했는지 확인하는 것을 쉽게 처리한다. 이를 사용하지 않으면 복잡하게 처리한다. 즉 body-parser 미들 웨어는 put과 post 방식으로 요청된 request.body를 쉽게 분석할 수 있다.
+<hr>
+
+## 05월 18일
 ## process 객체의 속성과 이벤트
-Node.js 는 process 전역 객체를 제공<br>
+Node.js 는 process 전역 객체를 제공
 process 객체는 프로세스 정보를 제공하며 제어할수있게하는 객체
-<br>
+
 progress객체의 속성
 <pre>
 <code>
@@ -26,7 +116,7 @@ uptime() 현재 프로그램이 실행된 시간을 리턴
 <hr>
 
 ## 전역변수
-__filename = 현재실행중인 코드의 파일 경로<br>
+__filename = 현재실행중인 코드의 파일 경로
 __dirname = 현재 실행중인 코드의 풀더 경로
 <pre>
 <code>
@@ -37,7 +127,7 @@ console.log(__dirname);
 <hr>
 
 ## url 모듈
-const url =require'(url')<br>
+const url =require'(url')
 메소드
 <pre>
 <code>
@@ -50,16 +140,16 @@ resolve(from,to) : 매개 변수를 조합하여 완전한 URL 문자열을 생�
 <hr>
 
 ## File System 모듈
-const fs = requrie('fs')<br>
-파일 읽기 : 실행할 자바스크립트 파일이 있는 풀더에 textfile.txt이름의 파일을 생성<br>
-fs.readFileSync(<파일이름>) = 동기적으로 파읽을 읽는다<br>
-fs.readFile(<파일이름>,<콜백함수>) 비동기적으로 파일을 읽는다<br>
+const fs = requrie('fs')
+파일 읽기 : 실행할 자바스크립트 파일이 있는 풀더에 textfile.txt이름의 파일을 생성
+fs.readFileSync(<파일이름>) = 동기적으로 파읽을 읽는다
+fs.readFile(<파일이름>,<콜백함수>) 비동기적으로 파일을 읽는다
 <hr>
 
 ## 노드 패키지 매니저
-Node.js는 npm 패키지 매니저를 사용해서 외부모듈을 설치가능함<br>
-예) npm istall <모듈이름><br>
-npm istall express @사용으로 원하는 버전을설치 할수있다<br>
+Node.js는 npm 패키지 매니저를 사용해서 외부모듈을 설치가능함
+예) npm istall <모듈이름>
+npm istall express @사용으로 원하는 버전을설치 할수있다
 express@4
 <hr>
 
