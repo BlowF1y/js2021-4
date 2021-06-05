@@ -1,4 +1,98 @@
 # 김영민 [201840113]
+## [06월 01일]
+## 버전에 따른 코드 사용 여부
+IE -> var<br>
+최신 웹 브라우저 -> let, const<br>
+var를 사용해도 오류는 생기지 않는다<br>
+그냥 let을 쓰면될듯??<br>
+<hr>
+
+## 객체 모델
+screen 객체
+웹 브라우저 화면이 아니라 웹 브라우저 그 자체이다.
+<pre>
+<code>
+width() -> 화면의 너비<br>
+heigth() -> 화면의 높이<br>
+availWidth()-> 실제 화면에서 사용 가능한 너비<br>
+availHeigth()-> 실제 화면에서 사용 가능한 높이
+등등
+</code>
+</pre>
+<hr>
+
+## JQuery
+<pre>
+<code>
+Basic<
+$(value1).method(parameter1, parameter2);
+//css 선택자
+
+$('h1') -> h1 태그를 선택한다.
+$('h1.logo') -> h1 태그 중 logo 클래스를 선택한다.
+$('h1#logo') -> h1 태그 중 logo 아이디를 선택한다.
+
+//each()
+$('h1').each(function (index, item){
+});
+odd, even 선택자
+odd -> 홀수번째 선택자 even -> 짝수번째 선택자
+</code>
+</pre>
+<hr>
+
+## 문서 객체 조작
+text() -> html 태그 내부의 문자를 조작한다.
+html() -> html 태그 내부의 문자를 조작하면서 html를 인식한다.
+<pre>
+<code>
+$('document').ready(function (){
+alert($('p').text());
+alert($('p').html()); })
+
+text() -> 모든 p 태그 내부 문자를 출력 html() -> 첫 번째로 선택된 p 태그 문자를 출력
+</code>
+</pre>
+<hr>
+
+## 스타일 조작
+<pre>
+<code>
+css() -> 스타일을 조작한다.
+
+$('html').css({
+    color : 'blue',
+    backgroundColor : 'white',
+})
+JSON 형식으로도 사용 가능하다.
+</code>
+</pre>
+<hr>
+
+## 이벤트
+<pre>
+<code>
+on() -> 이벤트를 연결한다.
+off() -> 이벤트를 제거한다.
+
+//이벤트 직접 연결
+
+$('선택자').on(<이벤트이름>, <콜백함수>);
+</code>
+</pre>
+<hr>
+
+## 애니메이션
+<pre>
+<code>
+animate() -> 애니메이션을 적용한다.
+
+//애니메이션 연결
+
+$('선택자').animate(<속성>, <시간>, <콜백함수>);
+</code>
+</pre>
+<hr>
 
 ### [05월 25일]
 ## express 모듈
